@@ -19,11 +19,12 @@ import org.w3c.dom.Text;
  */
 public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
 
-    public DealQueryAdapter(Context context) {
+    public DealQueryAdapter(Context context, final String store) {
         super(context, new ParseQueryAdapter.QueryFactory<Deal>() {
             public ParseQuery<Deal> create() {
                 // Get all routes as a ParseQuery
                 ParseQuery query = new ParseQuery("Deal");
+                query.whereEqualTo("store", store);
                 return query;
             }
         });
