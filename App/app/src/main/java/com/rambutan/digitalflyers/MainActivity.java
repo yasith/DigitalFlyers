@@ -38,7 +38,7 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Dea
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
-    private String[] STORE_NAMES = {"all", "sobeys", "loblaws", "metro", "no frills"};
+    private String[] STORE_NAMES = {"all", "sobeys", "food basics", "value mart", "zehrs"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,13 +150,8 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Dea
         @Override
         public CharSequence getPageTitle(int position) {
             Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
-                case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
+            if(position < STORE_NAMES.length) {
+                return STORE_NAMES[position].toUpperCase();
             }
             return null;
         }
