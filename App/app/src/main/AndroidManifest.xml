@@ -21,4 +21,6 @@
         </activity>
     </application>
 
+    <meta-data android:name="AA_DB_NAME" android:value="DigitalFlyers.db" />
+
 </manifest>
