@@ -8,4 +8,7 @@
     <dimen name="deal_item_height">100dp</dimen>
     <dimen name="deal_item_width">60dp</dimen>
     <dimen name="deal_item_padding">8dp</dimen>
-    </resources>
+
+    <dimen name="deal_image_height">150dp</dimen>
+    <dimen name="deal_image_width">150dp</dimen>
+</resources>
