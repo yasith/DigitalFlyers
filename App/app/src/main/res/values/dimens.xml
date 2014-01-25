@@ -2,5 +2,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="deal_item">100dp</dimen>
+    <dimen name="deal_textview_height">14dp</dimen>
+    <dimen name="deal_textview_width">50dp</dimen>
+    <dimen name="padding">8dp</dimen>
 
     </resources>
