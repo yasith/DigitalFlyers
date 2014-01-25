@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.parse.GetDataCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -54,13 +55,16 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
 
         ParseFile photoFile = deal.getImage();
         if (photoFile != null) {
-            image.setParseFile(photoFile);
-            image.loadInBackground(new GetDataCallback() {
+            //image.setParseFile(photoFile);
+            /*image.loadInBackground(new GetDataCallback() {
                 @Override
                 public void done(byte[] data, ParseException e) {
                     // nothing to do
                 }
             });
+            */
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(photoFile.getUrl(), image);
         }
 
         return v;
