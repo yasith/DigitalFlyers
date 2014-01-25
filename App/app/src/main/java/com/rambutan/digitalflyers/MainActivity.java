@@ -40,9 +40,6 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Dea
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize ActiveAndroid
-        ActiveAndroid.initialize(this);
-
         // Initialize Parse and Parse Objects
         ParseObject.registerSubclass(Deal.class);
 
