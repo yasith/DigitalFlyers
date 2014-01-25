@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="leaf_green" parent="@style/_leaf_green"/>
+
+  <style name="_leaf_green" parent="android:Theme.Holo.Light.DarkActionBar">
+
+    <item name="android:editTextBackground">@drawable/leaf_green_edit_text_holo_light</item>
+
+    <item name="android:textColorHighlight">#991dd300</item>
+    <item name="android:textSelectHandleLeft">@drawable/leaf_green_text_select_handle_left</item>
+    <item name="android:textSelectHandleRight">@drawable/leaf_green_text_select_handle_right</item>
+    <item name="android:textSelectHandle">@drawable/leaf_green_text_select_handle_middle</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewleaf_green</item>
+
+    <item name="android:listChoiceIndicatorMultiple">@drawable/leaf_green_btn_check_holo_light</item>
+
+    <item name="android:buttonStyle">@style/Buttonleaf_green</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonleaf_green</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarleaf_green</item>
+
+    <item name="android:seekBarStyle">@style/SeekBarleaf_green</item>
+
+    <item name="android:ratingBarStyle">@style/RatingBarleaf_green</item>
+
+    <item name="android:ratingBarStyleIndicator">@style/RatingBarBigleaf_green</item>
+
+    <item name="android:ratingBarStyleSmall">@style/RatingBarSmallleaf_green</item>
+
+    <item name="android:buttonStyleToggle">@style/Toggleleaf_green</item>
+
+    <item name="android:listChoiceBackgroundIndicator">@drawable/leaf_green_list_selector_holo_light</item>
+
+    <item name="android:activatedBackgroundIndicator">@drawable/leaf_green_activated_background_holo_light</item>
+
+    <item name="android:fastScrollThumbDrawable">@drawable/leaf_green_fastscroll_thumb_holo</item>
+
+  </style>
+
+</resources>

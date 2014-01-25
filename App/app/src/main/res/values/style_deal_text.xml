@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="deal_text">
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="deal_price">
+        <item name="android:fontFamily">sans-serif-regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/leaf_green_color</item>
+    </style>
+
+    <style name="deal_name" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="deal_image">
+        <item name="android:layout_width">@dimen/deal_image_width</item>
+        <item name="android:layout_height">@dimen/deal_image_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+</resources>
