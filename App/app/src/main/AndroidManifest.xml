@@ -9,7 +9,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Leaf_green_ab" >
+        android:theme="@style/Theme.Leaf_green_ab"
+        android:name="com.activeandroid.app.Application">
         <activity
             android:name="com.rambutan.digitalflyers.MainActivity"
             android:label="@string/app_name" >
@@ -19,6 +20,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.rambutan.digitalflyers.ShoppingList"
+            android:label="@string/title_activity_shopping_list"
+            android:parentActivityName="com.rambutan.digitalflyers.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
     </application>
+
+    <meta-data android:name="AA_DB_NAME" android:value="DigitalFlyers5.db" />
+    <meta-data android:name="AA_DB_VERSION" android:value="5" />
 
 </manifest>

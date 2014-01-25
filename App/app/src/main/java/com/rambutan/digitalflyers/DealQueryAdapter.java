@@ -6,16 +6,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.parse.GetDataCallback;
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseImageView;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
+import com.rambutan.digitalflyers.Util;
 
 /**
  * Created by yasith on 1/24/2014.
@@ -50,10 +45,10 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
         TextView store = (TextView) v.findViewById(R.id.item_store);
         ImageView image = (ImageView) v.findViewById(R.id.item_image);
 
-        name.setText(toTitleCase(deal.getName()));
+        name.setText(Util.toTitleCase(deal.getName()));
         price.setText("$" + deal.getPrice());
         //discount.setText(Integer.toString(deal.getDiscount()));
-        store.setText(toTitleCase(deal.getStore()));
+        store.setText(Util.toTitleCase(deal.getStore()));
 
         if (image == null) {
             image = new ImageView(getContext());
@@ -65,22 +60,6 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
         return v;
     }
 
-    private static String toTitleCase(String input) {
-        StringBuilder titleCase = new StringBuilder();
-        boolean nextTitleCase = true;
 
-        for (char c : input.toCharArray()) {
-            if (Character.isSpaceChar(c)) {
-                nextTitleCase = true;
-            } else if (nextTitleCase) {
-                c = Character.toTitleCase(c);
-                nextTitleCase = false;
-            }
-
-            titleCase.append(c);
-        }
-
-        return titleCase.toString();
-    }
 
 }

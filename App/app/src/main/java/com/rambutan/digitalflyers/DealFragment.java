@@ -10,10 +10,9 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import org.w3c.dom.Text;
 
 /**
  * A fragment representing a list of Items.
@@ -63,20 +62,6 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
         }
 
         mAdapter = new DealQueryAdapter(getActivity(), mStore);
-
-        //Create image options.
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.drawable.ic_launcher)
-                .cacheInMemory(true)
-                .cacheOnDisc(true)
-                .build();
-
-        //Create a config with those options.
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this.getActivity())
-                .defaultDisplayImageOptions(options)
-                .build();
-
-        ImageLoader.getInstance().init(config);
     }
 
     @Override
@@ -88,10 +73,34 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
         mGridView = (GridView) view.findViewById(R.id.deals_grid);
         mGridView.setAdapter(mAdapter);
 
-        // Set OnItemClickListener so we can be notified on item clicks
-        mGridView.setOnItemClickListener(this);
+
+        // Long click to add to cart
+        mGridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                TextView tv = (TextView) view.findViewById(R.id.item_name);
+                CharSequence toastText = tv.getText() + " was added to your cart";
+
+                Toast toast = Toast.makeText(getActivity(), toastText, Toast.LENGTH_SHORT);
+                toast.show();
+
+                saveToCart((Deal) adapterView.getItemAtPosition(i));
+
+                return false;
+            }
+        });
 
         return view;
+    }
+
+    private void saveToCart(Deal deal) {
+        CartItem item = new CartItem();
+        item.name = deal.getName();
+        item.price = deal.getPrice();
+        item.store = deal.getStore();
+        item.image = deal.getImage();
+
+        item.save();
     }
 
     @Override

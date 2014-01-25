@@ -8,5 +8,8 @@
     <string name="action_settings">Settings</string>
     <string name="deal_item">Deal</string>
     <string name="choose_stores">Choose Stores</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="title_activity_shopping_list">ShoppingList</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
