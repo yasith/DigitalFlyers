@@ -19,7 +19,7 @@
 
 <resources>
 
-    <style name="Theme.Leaf_green_ab" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    <style name="Theme.Leaf_green_ab" parent="leaf_green">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_leaf_green_ab</item>
         <item name="android:popupMenuStyle">@style/PopupMenu.Leaf_green_ab</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Leaf_green_ab</item>
