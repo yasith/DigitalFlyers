@@ -1,6 +1,7 @@
 package com.rambutan.digitalflyers;
 
 import com.parse.ParseClassName;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 
 /**
@@ -15,11 +16,19 @@ public class Deal extends ParseObject {
         return getString("name");
     }
 
-    public String getPrice() {
-        return getString("price");
+    public double getPrice() {
+        return getDouble("price");
     }
 
     public int getDiscount() {
         return getInt("discount");
+    }
+
+    public String getStore() {
+        return getString("store");
+    }
+
+    public ParseFile getImage() {
+        return getParseFile("image");
     }
 }

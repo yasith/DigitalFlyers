@@ -7,8 +7,8 @@
     android:padding="@dimen/padding"
     android:layout_gravity="center" >
 
-    <ImageView
-        android:id="@+id/image"
+    <com.parse.ParseImageView
+        android:id="@+id/item_image"
         android:layout_width="@dimen/deal_item"
         android:layout_height="@dimen/deal_item"
         android:layout_gravity="center"
@@ -16,7 +16,6 @@
         android:contentDescription="@string/deal_item" />
 
     <TextView
-        android:text="Bread"
         android:id="@+id/item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +27,6 @@
         android:textColor="@color/black" />
 
     <TextView
-        android:text="$3.99"
         android:id="@+id/item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,7 +38,6 @@
         android:textColor="@color/black" />
 
     <TextView
-        android:text="Sobeys"
         android:id="@+id/item_store"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,7 +49,6 @@
         android:textColor="@color/black" />
 
     <TextView
-        android:text="50%"
         android:id="@+id/item_discount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

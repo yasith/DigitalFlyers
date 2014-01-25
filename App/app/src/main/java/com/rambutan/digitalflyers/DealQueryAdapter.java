@@ -5,6 +5,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.parse.GetDataCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseImageView;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 
@@ -38,6 +42,23 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
         TextView price = (TextView) v.findViewById(R.id.item_price);
         TextView discount = (TextView) v.findViewById(R.id.item_discount);
         TextView store = (TextView) v.findViewById(R.id.item_store);
+        ParseImageView image = (ParseImageView) v.findViewById(R.id.item_image);
+
+        name.setText(deal.getName());
+        price.setText(Double.toString(deal.getPrice()));
+        discount.setText(Integer.toString(deal.getDiscount()));
+        store.setText(deal.getStore());
+
+        ParseFile photoFile = deal.getImage();
+        if (photoFile != null) {
+            image.setParseFile(photoFile);
+            image.loadInBackground(new GetDataCallback() {
+                @Override
+                public void done(byte[] data, ParseException e) {
+                    // nothing to do
+                }
+            });
+        }
 
         return v;
     }
