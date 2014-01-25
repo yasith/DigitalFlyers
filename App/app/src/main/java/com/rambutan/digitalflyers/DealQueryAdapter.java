@@ -3,6 +3,7 @@ package com.rambutan.digitalflyers;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -12,6 +13,7 @@ import com.parse.ParseFile;
 import com.parse.ParseImageView;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -46,26 +48,19 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
         TextView price = (TextView) v.findViewById(R.id.item_price);
         //TextView discount = (TextView) v.findViewById(R.id.item_discount);
         TextView store = (TextView) v.findViewById(R.id.item_store);
-        ParseImageView image = (ParseImageView) v.findViewById(R.id.item_image);
+        ImageView image = (ImageView) v.findViewById(R.id.item_image);
 
         name.setText(deal.getName());
         price.setText(Double.toString(deal.getPrice()));
         //discount.setText(Integer.toString(deal.getDiscount()));
         store.setText(deal.getStore());
 
-        ParseFile photoFile = deal.getImage();
-        if (photoFile != null) {
-            //image.setParseFile(photoFile);
-            /*image.loadInBackground(new GetDataCallback() {
-                @Override
-                public void done(byte[] data, ParseException e) {
-                    // nothing to do
-                }
-            });
-            */
-            ImageLoader imageLoader = ImageLoader.getInstance();
-            imageLoader.displayImage(photoFile.getUrl(), image);
+        if (image == null) {
+            image = new ImageView(getContext());
         }
+        String url = deal.getImage();
+
+        Picasso.with(getContext()).load(url).resize(150,150).centerCrop().into(image);
 
         return v;
     }

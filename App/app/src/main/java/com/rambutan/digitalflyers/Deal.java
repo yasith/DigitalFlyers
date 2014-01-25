@@ -28,7 +28,7 @@ public class Deal extends ParseObject {
         return getString("store");
     }
 
-    public ParseFile getImage() {
-        return getParseFile("image");
+    public String getImage() {
+        return "http://tuxv.net/images/" + getString("image");
     }
 }
