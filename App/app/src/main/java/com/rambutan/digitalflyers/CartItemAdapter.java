@@ -49,7 +49,7 @@ public class CartItemAdapter extends ArrayAdapter<CartItem>{
 
         ImageView image = (ImageView) view.findViewById(R.id.item_image);
 
-        Picasso.with(mContext).load(item.image).resize(150,150).centerCrop().into(image);
+        Picasso.with(mContext).load(item.image).resize(75,75).centerCrop().into(image);
 
         return view;
     }
