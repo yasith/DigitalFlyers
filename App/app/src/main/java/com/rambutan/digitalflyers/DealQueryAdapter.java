@@ -50,10 +50,10 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
         TextView store = (TextView) v.findViewById(R.id.item_store);
         ImageView image = (ImageView) v.findViewById(R.id.item_image);
 
-        name.setText(deal.getName());
-        price.setText(deal.getPrice());
+        name.setText(toTitleCase(deal.getName()));
+        price.setText("$" + deal.getPrice());
         //discount.setText(Integer.toString(deal.getDiscount()));
-        store.setText(deal.getStore());
+        store.setText(toTitleCase(deal.getStore()));
 
         if (image == null) {
             image = new ImageView(getContext());
@@ -63,6 +63,24 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
         Picasso.with(getContext()).load(url).resize(150,150).centerCrop().into(image);
 
         return v;
+    }
+
+    private static String toTitleCase(String input) {
+        StringBuilder titleCase = new StringBuilder();
+        boolean nextTitleCase = true;
+
+        for (char c : input.toCharArray()) {
+            if (Character.isSpaceChar(c)) {
+                nextTitleCase = true;
+            } else if (nextTitleCase) {
+                c = Character.toTitleCase(c);
+                nextTitleCase = false;
+            }
+
+            titleCase.append(c);
+        }
+
+        return titleCase.toString();
     }
 
 }
