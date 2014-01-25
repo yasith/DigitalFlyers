@@ -103,6 +103,9 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Dea
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.choose_stores) {
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

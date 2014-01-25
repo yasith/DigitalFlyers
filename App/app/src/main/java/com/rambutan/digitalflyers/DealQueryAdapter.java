@@ -44,13 +44,13 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
 
         TextView name = (TextView) v.findViewById(R.id.item_name);
         TextView price = (TextView) v.findViewById(R.id.item_price);
-        TextView discount = (TextView) v.findViewById(R.id.item_discount);
+        //TextView discount = (TextView) v.findViewById(R.id.item_discount);
         TextView store = (TextView) v.findViewById(R.id.item_store);
         ParseImageView image = (ParseImageView) v.findViewById(R.id.item_image);
 
         name.setText(deal.getName());
         price.setText(Double.toString(deal.getPrice()));
-        discount.setText(Integer.toString(deal.getDiscount()));
+        //discount.setText(Integer.toString(deal.getDiscount()));
         store.setText(deal.getStore());
 
         ParseFile photoFile = deal.getImage();
