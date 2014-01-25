@@ -1,62 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/border"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="@dimen/deal_item_width"
+    android:layout_height="@dimen/deal_item_height"
     android:orientation="vertical"
-    android:padding="@dimen/padding"
+    android:padding="@dimen/deal_item_padding"
     android:layout_gravity="center" >
 
-    <com.parse.ParseImageView
-        android:id="@+id/item_image"
-        android:layout_width="@dimen/deal_item"
-        android:layout_height="@dimen/deal_item"
-        android:layout_gravity="center"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/deal_item" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card" >
 
-    <TextView
-        android:id="@+id/item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|left"
-        android:background="@color/white"
-        android:gravity="center"
-        android:maxHeight="@dimen/deal_textview_height"
-        android:maxWidth="@dimen/deal_textview_width"
-        android:textColor="@color/black" />
+        <com.parse.ParseImageView
+            android:id="@+id/item_image"
+            style="@style/deal_image" />
 
-    <TextView
-        android:id="@+id/item_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|right"
-        android:background="@color/white"
-        android:gravity="center"
-        android:maxHeight="@dimen/deal_textview_height"
-        android:maxWidth="@dimen/deal_textview_width"
-        android:textColor="@color/black" />
 
-    <TextView
-        android:id="@+id/item_store"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
-        android:background="@color/white"
-        android:gravity="center"
-        android:maxHeight="@dimen/deal_textview_height"
-        android:maxWidth="@dimen/deal_textview_width"
-        android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/item_name"
+            android:maxLines="2"
+            style="@style/deal_name" />
 
-    <TextView
-        android:id="@+id/item_discount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:background="@color/white"
-        android:gravity="center"
-        android:maxHeight="@dimen/deal_textview_height"
-        android:maxWidth="@dimen/deal_textview_width"
-        android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/item_store"
+                style="@style/deal_text" />
+
+            <TextView
+                android:id="@+id/item_price"
+                style="@style/deal_text" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_discount"
+            style="@style/deal_text" />
+
+    </LinearLayout>
 
 </FrameLayout>
