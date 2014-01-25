@@ -71,7 +71,7 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
         View view = inflater.inflate(R.layout.fragment_deal_grid, container, false);
 
         // Set the adapter
-        mGridView = (GridView) view.findViewById(R.layout.fragment_deal_grid);
+        mGridView = (GridView) view.findViewById(R.layout.dealsgrid);
         ((AdapterView<ListAdapter>) mGridView).setAdapter(mAdapter);
 
         // Set OnItemClickListener so we can be notified on item clicks

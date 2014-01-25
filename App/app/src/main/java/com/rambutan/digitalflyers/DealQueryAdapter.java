@@ -3,9 +3,12 @@ package com.rambutan.digitalflyers;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by yasith on 1/24/2014.
@@ -23,13 +26,18 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
     }
 
     @Override
-    public View getItemView(Deal route, View v, ViewGroup parent) {
+    public View getItemView(Deal deal, View v, ViewGroup parent) {
 
         if (v == null) {
-            v = View.inflate(getContext(), android.R.layout.simple_list_item_1, null);
+            v = View.inflate(getContext(), R.layout.deal_item, null);
         }
 
-        super.getItemView(route, v, parent);
+        super.getItemView(deal, v, parent);
+
+        TextView name = (TextView) v.findViewById(R.id.item_name);
+        TextView price = (TextView) v.findViewById(R.id.item_price);
+        TextView discount = (TextView) v.findViewById(R.id.item_discount);
+        TextView store = (TextView) v.findViewById(R.id.item_store);
 
         return v;
     }
