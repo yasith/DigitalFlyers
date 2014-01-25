@@ -43,9 +43,9 @@ public class CartItemAdapter extends ArrayAdapter<CartItem>{
         TextView price = (TextView) view.findViewById(R.id.item_price);
         TextView  store = (TextView) view.findViewById(R.id.item_store);
 
-        name.setText(item.name);
-        price.setText(item.price);
-        store.setText(item.store);
+        name.setText(Util.toTitleCase(item.name));
+        price.setText("$" + item.price);
+        store.setText(Util.toTitleCase(item.store));
 
         ImageView image = (ImageView) view.findViewById(R.id.item_image);
 
