@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:background="@drawable/bg_card">
 
-        <com.parse.ParseImageView
+        <ImageView
             android:id="@+id/item_image"
             android:layout_gravity="center"
             style="@style/deal_image" />
