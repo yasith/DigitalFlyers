@@ -11,10 +11,6 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-
 /**
  * A fragment representing a list of Items.
  * <p />
@@ -63,20 +59,6 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
         }
 
         mAdapter = new DealQueryAdapter(getActivity(), mStore);
-
-        //Create image options.
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.drawable.ic_launcher)
-                .cacheInMemory(true)
-                .cacheOnDisc(true)
-                .build();
-
-        //Create a config with those options.
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this.getActivity())
-                .defaultDisplayImageOptions(options)
-                .build();
-
-        ImageLoader.getInstance().init(config);
     }
 
     @Override
