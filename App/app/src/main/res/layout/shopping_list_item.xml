@@ -41,11 +41,6 @@
             style="@style/deal_price"
             android:layout_gravity="center" />
 
-
-        <!--<TextView
-            android:id="@+id/item_discount"
-            style="@style/deal_text" />
--->
     </LinearLayout>
 
 </FrameLayout>

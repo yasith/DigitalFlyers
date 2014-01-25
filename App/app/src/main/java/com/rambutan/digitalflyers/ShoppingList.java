@@ -11,6 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import com.activeandroid.query.Select;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ShoppingList extends Activity {
 
     @Override
@@ -51,6 +56,9 @@ public class ShoppingList extends Activity {
      */
     public static class PlaceholderFragment extends Fragment {
 
+        private List<CartItem> mItems;
+        private CartItemAdapter mAdapter;
+
         public PlaceholderFragment() {
         }
 
@@ -58,6 +66,10 @@ public class ShoppingList extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_shopping_list, container, false);
+
+            mItems = new Select().from(CartItem.class).execute();
+            mAdapter = new CartItemAdapter(getActivity(), R.layout.shopping_list_item, (ArrayList)mItems);
+
             return rootView;
         }
     }
