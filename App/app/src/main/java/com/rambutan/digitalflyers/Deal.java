@@ -16,12 +16,12 @@ public class Deal extends ParseObject {
         return getString("name");
     }
 
-    public double getPrice() {
-        return getDouble("price");
+    public String getPrice() {
+        return getString("price");
     }
 
-    public int getDiscount() {
-        return getInt("discount");
+    public String getDiscount() {
+        return getString("discount");
     }
 
     public String getStore() {

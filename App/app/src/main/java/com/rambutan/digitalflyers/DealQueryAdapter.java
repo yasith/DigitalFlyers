@@ -51,7 +51,7 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
         ImageView image = (ImageView) v.findViewById(R.id.item_image);
 
         name.setText(deal.getName());
-        price.setText(Double.toString(deal.getPrice()));
+        price.setText(deal.getPrice());
         //discount.setText(Integer.toString(deal.getDiscount()));
         store.setText(deal.getStore());
 
