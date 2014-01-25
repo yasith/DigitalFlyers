@@ -24,12 +24,12 @@
             android:padding="@dimen/deal_item_padding">
 
             <TextView
-                android:id="@+id/item_store"
+                android:id="@+id/item_name"
                 style="@style/deal_name"
                 android:layout_gravity="top|left"/>
 
             <TextView
-                android:id="@+id/item_name"
+                android:id="@+id/item_store"
                 style="@style/deal_text"
                 android:singleLine="true"
                 android:layout_gravity="bottom|left"/>
