@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
@@ -32,16 +33,11 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
 
     private OnFragmentInteractionListener mListener;
 
-    /**
-     * The fragment's ListView/GridView.
-     */
-    private AbsListView mListView;
+    // Fragment's GridView
+    private GridView mGridView;
 
-    /**
-     * The Adapter which will be used to populate the ListView/GridView with
-     * Views.
-     */
-    private ListAdapter mAdapter;
+    // Adapter used to populate the grid
+    private DealQueryAdapter mAdapter;
 
     public static DealFragment newInstance(String store) {
         DealFragment fragment = new DealFragment();
@@ -67,8 +63,7 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
         }
 
         // TODO: Change Adapter to display your content
-        mAdapter = new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);
+        mAdapter = new DealQueryAdapter(getActivity());
     }
 
     @Override
@@ -77,11 +72,11 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
         View view = inflater.inflate(R.layout.fragment_deal_grid, container, false);
 
         // Set the adapter
-        mListView = (AbsListView) view.findViewById(android.R.id.list);
-        ((AdapterView<ListAdapter>) mListView).setAdapter(mAdapter);
+        mGridView = (GridView) view.findViewById(R.layout.fragment_deal_grid);
+        ((AdapterView<ListAdapter>) mGridView).setAdapter(mAdapter);
 
         // Set OnItemClickListener so we can be notified on item clicks
-        mListView.setOnItemClickListener(this);
+        mGridView.setOnItemClickListener(this);
 
         return view;
     }
@@ -119,7 +114,7 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
      * to supply the text it should use.
      */
     public void setEmptyText(CharSequence emptyText) {
-        View emptyView = mListView.getEmptyView();
+        View emptyView = mGridView.getEmptyView();
 
         if (emptyText instanceof TextView) {
             ((TextView) emptyView).setText(emptyText);
