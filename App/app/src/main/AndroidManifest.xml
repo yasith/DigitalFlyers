@@ -19,8 +19,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.rambutan.digitalflyers.ShoppingList"
+            android:label="@string/title_activity_shopping_list"
+            android:parentActivityName="com.rambutan.digitalflyers.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
     </application>
 
-    <meta-data android:name="AA_DB_NAME" android:value="DigitalFlyers.db" />
+    <meta-data
+        android:name="AA_DB_NAME"
+        android:value="DigitalFlyers.db" />
 
 </manifest>

@@ -27,12 +27,4 @@ public class CartItem extends Model{
     public CartItem() {
         super();
     }
-
-    public CartItem(String name, String price, String image, String store) {
-        super();
-        this.name = name;
-        this.price = price;
-        this.image = image;
-        this.store = store;
-    }
 }
