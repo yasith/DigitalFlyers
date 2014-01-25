@@ -72,8 +72,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Parse-1.4.0" level="project" />
     <orderEntry type="library" exported="" name="picasso-2.1.1" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-19.0.0" level="project" />
-    <orderEntry type="library" exported="" name="support-v13-19.0.0" level="project" />
+    <orderEntry type="library" exported="" name="support-v13-19.0.1" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-19.0.1" level="project" />
     <orderEntry type="library" exported="" name="universal-image-loader-1.9.1" level="project" />
   </component>
 </module>
