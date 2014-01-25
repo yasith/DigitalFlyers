@@ -50,10 +50,6 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Dea
 
         Parse.initialize(this, "bR0fkne3E6YiRq4Q6UOU8DQsn5bzorLepjKZpFDz", "JgAu5VsW5o7vF2I5Ge3n0Nh3cC0GuhEc8dgJVogl");
 
-        ParseObject testObject = new ParseObject("Deal");
-        testObject.put("name", "bar");
-        testObject.saveInBackground();
-
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);

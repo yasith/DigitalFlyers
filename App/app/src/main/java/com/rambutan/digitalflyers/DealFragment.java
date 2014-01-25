@@ -62,7 +62,6 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
             mStore = getArguments().getString(STORE);
         }
 
-        // TODO: Change Adapter to display your content
         mAdapter = new DealQueryAdapter(getActivity());
     }
 
