@@ -11,6 +11,6 @@ deals = []
 input_file = open("grocerydata.csv")
 for line in input_file:
     line = line.split(',')
-    deals.append(Deal(name=line[0], store=line[1], image=line[2], discount=line[3], price=line[4]))
+    deals.append(Deal(name=line[0], store=line[1], price=line[2], discount=line[3], image=line[4]))
     batcher = ParseBatcher()
     batcher.batch_save(deals)

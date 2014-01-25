@@ -34,7 +34,7 @@
 
         <TextView
             android:id="@+id/item_price"
-            style="@style/deal_text"
+            style="@style/deal_price"
             android:layout_gravity="right"
             />
         </FrameLayout>
