@@ -68,7 +68,7 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_deal_grid, container, false);
+        View view = inflater.inflate(R.layout.dealsgrid, container, false);
 
         // Set the adapter
         mGridView = (GridView) view.findViewById(R.layout.dealsgrid);
