@@ -10,6 +10,9 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 /**
  * A fragment representing a list of Items.
@@ -70,8 +73,20 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
         mGridView = (GridView) view.findViewById(R.id.deals_grid);
         mGridView.setAdapter(mAdapter);
 
-        // Set OnItemClickListener so we can be notified on item clicks
-        mGridView.setOnItemClickListener(this);
+
+        // Long click to add to cart
+        mGridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                TextView tv = (TextView) view.findViewById(R.id.item_name);
+                CharSequence toastText = tv.getText() + " was added to your cart";
+
+                Toast toast = Toast.makeText(getActivity(), toastText, Toast.LENGTH_SHORT);
+                toast.show();
+
+                return false;
+            }
+        });
 
         return view;
     }
