@@ -3,6 +3,7 @@ package com.rambutan.digitalflyers;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -54,7 +55,7 @@ public class ShoppingList extends Activity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class PlaceholderFragment extends ListFragment {
 
         private List<CartItem> mItems;
         private CartItemAdapter mAdapter;
@@ -69,6 +70,8 @@ public class ShoppingList extends Activity {
 
             mItems = new Select().from(CartItem.class).execute();
             mAdapter = new CartItemAdapter(getActivity(), R.layout.shopping_list_item, (ArrayList)mItems);
+
+            this.setListAdapter(mAdapter);
 
             return rootView;
         }
