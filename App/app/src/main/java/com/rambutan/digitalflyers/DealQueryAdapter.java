@@ -24,7 +24,9 @@ public class DealQueryAdapter extends ParseQueryAdapter<Deal> {
             public ParseQuery<Deal> create() {
                 // Get all routes as a ParseQuery
                 ParseQuery query = new ParseQuery("Deal");
-                query.whereEqualTo("store", store);
+                if (!store.toLowerCase().contentEquals("all")) {
+                    query.whereEqualTo("store", store);
+                }
                 return query;
             }
         });
