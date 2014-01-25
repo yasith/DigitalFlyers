@@ -84,7 +84,7 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
                 Toast toast = Toast.makeText(getActivity(), toastText, Toast.LENGTH_SHORT);
                 toast.show();
 
-                saveToCard((Deal) adapterView.getItemAtPosition(i));
+                saveToCart((Deal) adapterView.getItemAtPosition(i));
 
                 return false;
             }
@@ -93,7 +93,7 @@ public class DealFragment extends Fragment implements AbsListView.OnItemClickLis
         return view;
     }
 
-    private void saveToCard(Deal deal) {
+    private void saveToCart(Deal deal) {
         CartItem item = new CartItem();
         item.name = deal.getName();
         item.price = deal.getPrice();
