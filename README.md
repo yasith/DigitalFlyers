@@ -12,4 +12,4 @@ This app lets you browse the deals in your local grocery stores, just like you s
 2. [ActiveAndroid](http://www.activeandroid.com/) for storing data in SQLite database, without pulling our hair out.
 3. [Picasso](http://square.github.io/picasso/) for downloading images, caching them and processing them, again without too much hair loss.
 
-Made By: [Yasith Vidanaarachchi](http://tuxv.net) and Will Armstrong	
+Made By: [Yasith Vidanaarachchi](http://tuxv.net) and [Will Armstrong](http://armstrongwill.com/)	
